@@ -1,15 +1,15 @@
 import java.util.*; 
 
 public class Graph {
-    int num_vertices;
+    Integer num_vertices;
     Vector<Edge> edges;
 
-    public Graph(int num_vertices) {
+    public Graph(Integer num_vertices) {
         this.num_vertices = num_vertices;
         this.edges = new Vector<Edge> ();
     }
 
-    public void add_edge(int u, int v, int w) {
+    public void add_edge(Integer u, Integer v, Integer w) {
         Edge e = new Edge(u, v, w);
         edges.add(e);
     }

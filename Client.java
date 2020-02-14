@@ -7,7 +7,9 @@ public class Client {
    public static void main(String[] args) {  
       try {  
          // Getting the registry 
-         Registry registry = LocateRegistry.getRegistry(null); 
+         String server_ip = args[0];
+         int server_port = Integer.parseInt(args[1]);
+         Registry registry = LocateRegistry.getRegistry(server_ip, server_port); 
     
          // Looking up the registry for the remote object 
          Graphs stub = (Graphs) registry.lookup("Graphs"); 
@@ -24,15 +26,15 @@ public class Client {
              if(command.equals(ADD_GRAPH))
              {
                 String graph_identifier = input.next();
-                int num_nodes = input.nextInt();
+                Integer num_nodes = input.nextInt();
                  stub.add_graph(graph_identifier, num_nodes);
              }
              else if(command.equals(ADD_EDGE))
              {
                 String graph_identifier = input.next();
-                int u = input.nextInt();
-                 int v = input.nextInt();
-                 int w = input.nextInt();
+                Integer u = input.nextInt();
+                 Integer v = input.nextInt();
+                 Integer w = input.nextInt();
                  stub.add_edge(graph_identifier, u, v, w);
              }
              else if(command.equals(GET_MST))

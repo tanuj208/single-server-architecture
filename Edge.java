@@ -1,8 +1,8 @@
 public class Edge {
-    int vtx1;
-    int vtx2;
-    int wt;
-    public Edge(int vtx1, int vtx2, int wt) {
+    Integer vtx1;
+    Integer vtx2;
+    Integer wt;
+    public Edge(Integer vtx1, Integer vtx2, Integer wt) {
         this.vtx1 = vtx1;
         this.vtx2 = vtx2;
         this.wt = wt;
